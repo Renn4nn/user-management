@@ -38,7 +38,7 @@ Para colocar este projeto em funcionamento na sua máquina local, siga estes pas
     ```
 
 3.  **Configure as variáveis de ambiente:**
-    Crie um arquivo `.env` no diretório `backend`. Copie o conteúdo de `.env.example` (se fornecido) ou crie-o do zero com as seguintes variáveis, ajustando-as à sua configuração do MySQL:
+    Crie um arquivo `.env` no diretório `backend` e preencha com as seguintes variáveis, ajustando-as à sua configuração do MySQL:
     ```env
     HOST=seu_host_mysql (ex: localhost)
     USER=seu_usuario_mysql (ex: root)
