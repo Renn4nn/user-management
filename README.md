@@ -11,6 +11,10 @@ Principais funcionalidades:
 - Formatação de entrada para CPF e números de telefone para melhor experiência do usuário.
 - Formatação de data para exibição.
 
+## Visualização do Projeto
+
+![Visualização do Projeto](./image.png)
+
 ## 2. Tutorial de Instalação
 
 Para colocar este projeto em funcionamento na sua máquina local, siga estes passos:
