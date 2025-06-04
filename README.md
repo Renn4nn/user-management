@@ -1,133 +1,133 @@
-# User Management System
+# Sistema de Gerenciamento de Usuários
 
-## 1. Introduction
+## 1. Introdução
 
-This is a full-stack User Management System designed to allow for the registration, viewing, and deletion of users. The frontend is built with React and Vite, providing a dynamic and responsive user interface. The backend is developed with Node.js and Express, interacting with a MySQL database to store and manage user data.
+Este é um Sistema de Gerenciamento de Usuários full-stack projetado para permitir o cadastro, visualização e exclusão de usuários. O frontend é construído com React e Vite, fornecendo uma interface de usuário dinâmica e responsiva. O backend é desenvolvido com Node.js e Express, interagindo com um banco de dados MySQL para armazenar e gerenciar os dados dos usuários.
 
-Key features:
-- User registration with name, email, CPF, telephone, and date of birth.
-- Display of registered users in a clear, formatted table.
-- Ability to delete users from the system.
-- Input formatting for CPF and telephone numbers for better user experience.
-- Date formatting for display.
+Principais funcionalidades:
+- Cadastro de usuário com nome, email, CPF, telefone e data de nascimento.
+- Exibição dos usuários cadastrados em uma tabela clara e formatada.
+- Capacidade de excluir usuários do sistema.
+- Formatação de entrada para CPF e números de telefone para melhor experiência do usuário.
+- Formatação de data para exibição.
 
-## 2. Installation Tutorial
+## 2. Tutorial de Instalação
 
-To get this project up and running on your local machine, follow these steps:
+Para colocar este projeto em funcionamento na sua máquina local, siga estes passos:
 
-### Prerequisites
+### Pré-requisitos
 
-- Node.js (which includes npm or yarn) installed on your system.
-- MySQL Server installed and running.
+- Node.js (que inclui npm ou yarn) instalado no seu sistema.
+- Servidor MySQL instalado e em execução.
 
-### Backend Setup
+### Configuração do Backend
 
-1.  **Navigate to the backend directory:**
+1.  **Navegue até o diretório do backend:**
     ```bash
     cd backend
     ```
 
-2.  **Install dependencies:**
-    Using npm:
+2.  **Instale as dependências:**
+    Usando npm:
     ```bash
     npm install
     ```
-    Or using yarn:
+    Ou usando yarn:
     ```bash
     yarn install
     ```
 
-3.  **Configure environment variables:**
-    Create a `.env` file in the `backend` directory. Copy the contents of `.env.example` (if provided) or create it from scratch with the following variables, adjusting them to your MySQL setup:
+3.  **Configure as variáveis de ambiente:**
+    Crie um arquivo `.env` no diretório `backend`. Copie o conteúdo de `.env.example` (se fornecido) ou crie-o do zero com as seguintes variáveis, ajustando-as à sua configuração do MySQL:
     ```env
-    HOST=your_mysql_host (e.g., localhost)
-    USER=your_mysql_user (e.g., root)
-    PASSWORD=your_mysql_password
-    DATABASE=your_database_name (e.g., user_management_db)
-    PORT=3001 (or any port you prefer for the backend server, ensure it matches frontend calls if changed from default 3000)
+    HOST=seu_host_mysql (ex: localhost)
+    USER=seu_usuario_mysql (ex: root)
+    PASSWORD=sua_senha_mysql
+    DATABASE=seu_banco_de_dados (ex: user_management_db)
+    PORT=3001 (ou qualquer porta de sua preferência para o servidor backend, garanta que corresponda às chamadas do frontend se alterado do padrão 3000)
     ```
 
-4.  **Set up the MySQL database and table:**
-    Connect to your MySQL server and run the SQL script provided in section 3 below to create the necessary database (if you haven't already) and the `users` table.
+4.  **Configure o banco de dados MySQL e a tabela:**
+    Conecte-se ao seu servidor MySQL e execute o script SQL fornecido na seção 3 abaixo para criar o banco de dados necessário (se ainda não o fez) e a tabela `users`.
 
-5.  **Start the backend server:**
-    Using npm:
+5.  **Inicie o servidor backend:**
+    Usando npm:
     ```bash
     npm start
     ```
-    Or using yarn:
+    Ou usando yarn:
     ```bash
     yarn start
     ```
-    The backend server should now be running (typically on `http://localhost:3000` or the `PORT` you specified).
+    O servidor backend deve estar agora em execução (normalmente em `http://localhost:3000` ou na `PORT` que você especificou).
 
-### Frontend Setup
+### Configuração do Frontend
 
-1.  **Navigate to the project root directory (where the frontend `package.json` is located, usually the main project folder if it's a Vite setup):**
+1.  **Navegue até o diretório raiz do projeto (onde o `package.json` do frontend está localizado, geralmente a pasta principal do projeto se for uma configuração Vite):**
     ```bash
     cd .. 
-    # (If you are in the backend folder, otherwise navigate to the project root)
+    # (Se você estiver na pasta backend, caso contrário, navegue para a raiz do projeto)
     ```
-    Or, if your frontend is in a specific subdirectory like `frontend`:
+    Ou, se o seu frontend estiver em um subdiretório específico como `frontend`:
     ```bash
     cd frontend
     ```
 
-2.  **Install dependencies:**
-    Using npm:
+2.  **Instale as dependências:**
+    Usando npm:
     ```bash
     npm install
     ```
-    Or using yarn:
+    Ou usando yarn:
     ```bash
     yarn install
     ```
 
-3.  **Start the frontend development server:**
-    Using npm:
+3.  **Inicie o servidor de desenvolvimento do frontend:**
+    Usando npm:
     ```bash
     npm run dev
     ```
-    Or using yarn:
+    Ou usando yarn:
     ```bash
     yarn dev
     ```
-    The application should now be accessible in your browser, typically at `http://localhost:5173` (Vite's default) or another port specified in the output.
+    A aplicação deve estar agora acessível no seu navegador, normalmente em `http://localhost:5173` (padrão do Vite) ou outra porta especificada na saída.
 
-## 3. MySQL Database Setup
+## 3. Configuração do Banco de Dados MySQL
 
-This project requires a MySQL database to store user information.
+Este projeto requer um banco de dados MySQL para armazenar as informações dos usuários.
 
-**Configuration:**
+**Configuração:**
 
-As mentioned in the backend setup, you must create a `.env` file in the `backend` directory and populate it with your MySQL connection details. The backend uses these credentials to connect to your database.
+Conforme mencionado na configuração do backend, você deve criar um arquivo `.env` no diretório `backend` e preenchê-lo com os detalhes da sua conexão MySQL. O backend usa essas credenciais para se conectar ao seu banco de dados.
 
-**Example `.env` file content for the backend:**
+**Exemplo de conteúdo do arquivo `.env` para o backend:**
 ```env
 HOST=localhost
 USER=root
-PASSWORD=your_secret_password
+PASSWORD=sua_senha_secreta
 DATABASE=user_management_db
 PORT=3000
 ```
 
-**Table Schema:**
+**Esquema da Tabela:**
 
-Connect to your MySQL instance (using a tool like MySQL Workbench, DBeaver, or the command line) and execute the following SQL command to create the `users` table within your chosen database:
+Conecte-se à sua instância MySQL (usando uma ferramenta como MySQL Workbench, DBeaver ou a linha de comando) e execute o seguinte comando SQL para criar a tabela `users` dentro do banco de dados escolhido:
 
 ```sql
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    cpf VARCHAR(14) NOT NULL UNIQUE,     -- Stores raw digits, frontend formats to XXX.XXX.XXX-XX
-    telephone VARCHAR(30) NOT NULL, -- Stores raw digits, frontend formats
+    cpf VARCHAR(14) NOT NULL UNIQUE,     -- Armazena dígitos brutos, frontend formata para XXX.XXX.XXX-XX
+    telephone VARCHAR(30) NOT NULL, -- Armazena dígitos brutos, frontend formata
     data_birth DATE NOT NULL
 );
 ```
 
-**Note on `cpf` and `telephone` fields:** The database stores the raw digits for CPF (e.g., `12345678901`) and telephone. The frontend application handles the formatting (e.g., `123.456.789-01` for CPF and `(XX) XXXXX-XXXX` for telephone) for display and user input.
+**Nota sobre os campos `cpf` e `telephone`:** O banco de dados armazena os dígitos brutos para CPF (ex: `12345678901`) e telefone. A aplicação frontend lida com a formatação (ex: `123.456.789-01` para CPF e `(XX) XXXXX-XXXX` para telefone) para exibição e entrada do usuário.
 
 ---
 
-Once these steps are completed, you should have a fully functional User Management System running locally.
+Uma vez que estes passos sejam concluídos, você deverá ter um Sistema de Gerenciamento de Usuários totalmente funcional rodando localmente.
